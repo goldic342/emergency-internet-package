@@ -8,7 +8,7 @@ def mirror_sites():
 
 def main():
     mirror_sites()
-    schedule.every(10).seconds.do(mirror_sites)
+    schedule.every(1).hours.do(mirror_sites)
 
     while True:
         schedule.run_pending()
