@@ -4,32 +4,17 @@ sudo apt install wget
 chmod +x ./main.sh
 
 
-if ! [ -d "../websites-scr" ] || ! [ -f "./web-URLS.txt" ];
+if ! [ -f "../Websites/web-URLS.txt" ];
 then
-        if ! [ -f "../web-URLS.txt" ];
-        then
-                echo "creating URLS.txt file"
-                echo "www.example.com" >  ../web-URLS.txt
-        fi
-
-        if ! [ -d "../websites-scr" ];
-        then
-                echo "Creating directory for download"
-                mkdir ../websites-scr
-        fi
+        echo "Copy web-URLS.txt file"
+        cp ../Websites/web-URLS.txt.template ../Websites/web-URLS.txt
 fi
 
-if ! [ -d "../apps-scr" ] || ! [ -f "./app-URLS.txt" ];
-then
-        if ! [ -f "../app-URLS.txt" ];
-        then
-                echo "creating URLS.txt file"
-                echo "www.example.com" >  ../app-URLS.txt
-        fi
 
-        if ! [ -d "../apps-scr" ];
-        then
-                echo "Creating directory for download"
-                mkdir ../apps-scr
-        fi
+
+if ! [ -f "../Apps/apps-URLS.txt" ];
+then
+        echo "Copy apps-URLS.txt file"
+        cp ../Apps/apps-URLS.txt.template ../Apps/apps-URLS.txt
 fi
+
